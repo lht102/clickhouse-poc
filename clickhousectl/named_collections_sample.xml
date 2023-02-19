@@ -1,0 +1,24 @@
+<clickhouse>
+    <named_collections>
+        <mysql_event_service>
+            <user>root</user>
+            <password></password>
+            <host>host.docker.internal</host>
+            <port>3306</port>
+            <database>event_service_test</database>
+            <connection_pool_size>8</connection_pool_size>
+            <on_duplicate_clause>1</on_duplicate_clause>
+            <replace_query>0</replace_query>
+        </mysql_event_service>
+        <mysql_payment_service>
+            <user>root</user>
+            <password></password>
+            <host>host.docker.internal</host>
+            <port>3306</port>
+            <database>payment_service_test</database>
+            <connection_pool_size>8</connection_pool_size>
+            <on_duplicate_clause>1</on_duplicate_clause>
+            <replace_query>0</replace_query>
+        </mysql_payment_service>
+    </named_collections>
+</clickhouse>
