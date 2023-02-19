@@ -1,0 +1,72 @@
+run:
+  tests: true
+  timeout: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+    - asasalint
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - contextcheck
+    - durationcheck
+    - errchkjson
+    - errorlint
+    - exhaustive
+    - exportloopref
+    - gocritic
+    - gosec
+    - loggercheck
+    - makezero
+    - nilerr
+    - noctx
+    - reassign
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - dogsled
+    - errname
+    - forcetypeassert
+    - gochecknoglobals
+    - gochecknoinits
+    - goconst
+    - godot
+    - goimports
+    - grouper
+    - importas
+    - lll
+    - misspell
+    - stylecheck
+    - tagliatelle
+    - testpackage
+    - thelper
+    - tparallel
+    - unconvert
+    - usestdlibvars
+    - wastedassign
+    - whitespace
+    - wrapcheck
+    - wsl
+
+linters-settings:
+  tagliatelle:
+    case:
+      use-field-name: false
+      rules:
+        json: snake
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - goerr113
+        - bodyclose
+        - wrapcheck
