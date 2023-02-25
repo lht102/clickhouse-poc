@@ -212,6 +212,10 @@ func initFakeData(
 	fake := faker.New()
 
 	if err := batch.All(paymentCount, batchSize, func(start, end int) error {
+		if batchInterval > 0 {
+			time.Sleep(batchInterval)
+		}
+
 		if err := batchCreateRandomPayments(
 			sqlDB,
 			start,

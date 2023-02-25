@@ -199,6 +199,10 @@ func initFakeData(
 	fake := faker.New()
 
 	if err := batch.All(categoryCount, batchSize, func(start, end int) error {
+		if batchInterval > 0 {
+			time.Sleep(batchInterval)
+		}
+
 		if err := batchCreateRandomCategories(
 			sqlDB,
 			start,
@@ -217,6 +221,10 @@ func initFakeData(
 	}
 
 	if err := batch.All(eventCount, batchSize, func(start, end int) error {
+		if batchInterval > 0 {
+			time.Sleep(batchInterval)
+		}
+
 		if err := batchCreateRandomEvents(
 			sqlDB,
 			start,
